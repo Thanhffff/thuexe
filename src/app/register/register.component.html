@@ -1,0 +1,80 @@
+<div class="nav-bar">
+  <ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
+    <li nz-menu-item nzSelected>
+      <a>ThueXe</a>
+    </li>
+    <li>
+      <p nz-icon nzType="phone"></p>
+      1900 0927
+    </li>
+    <li>
+      <p nz-icon nzType="mail"></p>
+      contact@thuexe.com
+    </li>
+    <li>
+      <p nz-icon nzType="car"></p>
+      Trở thành chủ xe
+    </li>
+    <li nz-menu-item (click)="login()">
+      Đăng nhập
+    </li>
+    <li nz-menu-item>
+      Đăng ký
+    </li>
+    <li>
+      <p nz-icon nzType="line"
+       style="position: absolute;
+       width: 25px;
+       height: 50px;
+       transform: matrix(0, 2, 1, 0, 0, 0);"></p>
+       <span nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;"></span>
+    </li>
+  </ul>
+</div>
+<div [className]="'login'">
+  <h2>Đăng Ký Tài Khoản</h2>
+  <form  nz-form [formGroup]="validateForm" [className]="'login-form'" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your SĐT or Email!">
+        <nz-input-group nzPrefixIcon="phone">
+          <input type="text" nz-input formControlName="userName" placeholder="Điện thoại hoặc Emal" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your username!">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="password" nz-input formControlName="password" placeholder="Mật khẩu" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+          <input type="password" nz-input formControlName="password" placeholder="Mật khẩu" />
+      </nz-form-control>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <input type="password" nz-input formControlName="password" placeholder="Nhập lại mật khẩu" />
+    </nz-form-control>
+    </nz-form-item>
+    <div nz-row class="login-form-margin">
+      <div nz-col [nzSpan]="30">
+        <p nz-checkbox [(ngModel)]="checked">Tui đã đọc và đồng ý điều khoản với chính sách của ThueXe. <a style="color: lawngreen;">Tìm hiểu ngay</a></p>
+      </div>
+    </div>
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Đăng Ký</button>
+    <div>
+     <p>_____________________________________________________________________</p>
+    </div>
+    <div style="width: 100%; height: 50px;  display: flex;justify-content: center;">
+      Hoặc đăng nhập bằng tài khoản
+    </div>
+    <div class="button-container">
+      <div class="btn-fb">
+        <button nz-button [nzType]="'primary'"><i nz-icon nzType="facebook"></i>Facebook</button>
+      </div>
+      <div class="btn-gmail">
+        <button nz-button [nzType]="'primary'"><i nz-icon nzType="google"></i>Gmail</button>
+      </div>
+    </div>
+
+  </form>

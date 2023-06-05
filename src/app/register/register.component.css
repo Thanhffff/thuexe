@@ -1,0 +1,56 @@
+ul li a{
+  color: white;
+  font-style: oblique;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+}
+ul li{
+  color: white;
+}
+.login h2{
+  justify-content: center;
+  display: flex;
+  height: auto;
+  margin-top: 70px;
+}
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  background: #5AB6F2;
+  width: 100%;
+}
+.button-container {
+  text-align: center; /* Căn giữa các nút */
+}
+
+.btn-fb {
+  float: left; /* Nút Facebook sẽ nằm bên trái */
+}
+
+.btn-gmail {
+  float: right; /* Nút Gmail sẽ nằm bên phải */
+}
+.btn-fb button {
+  background-color: #3b5998; /* Màu nền của nút Facebook */
+}
+
+.btn-gmail button {
+  background-color: #db4a39; /* Màu nền của nút Gmail */
+}
+
+.btn-fb button,
+.btn-gmail button {
+  color: white; /* Màu chữ trên nút */
+  padding: 8px 40px; /* Kích thước nút */
+}

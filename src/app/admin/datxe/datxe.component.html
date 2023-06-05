@@ -1,0 +1,112 @@
+<nz-layout class="app-layout" style="background:#1890ff">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>ThueXe Admin</h1>
+      </a>
+    </div>
+    <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed" style="background: #1890ff;">
+      <li nz-submenu nzOpen nzTitle="Thống kê" nzIcon="dashboard" routerLink="/dashboard">
+      </li>
+      <li nz-submenu nzOpen nzTitle="Tài Khoản" nzIcon="user" routerLink="/user">
+      </li>
+      <li nz-submenu nzOpen nzTitle="Đặt Xe" nzIcon="setting"></li>
+      <li nz-submenu nzOpen nzTitle="Lịch Sử Đặt Xe" nzIcon="folder-open" routerLink="/history"></li>
+      <li nz-submenu nzTitle="Phân quyền" nzIcon="team" style="background: #1890ff;">
+        <ul>
+          <li nz-menu-item nzMatchRoute routerLink="/manage">
+            <a>Quản lý phân quyền</a>
+          </li>
+            <li nz-menu-item nzMatchRouter routerLink="/chucvu">
+              <a>Quản lý chức vụ</a>
+            </li>
+            <li nz-menu-item nzMatchRouter routerLink="/manhinh">
+              <a>Quản lý màn hình</a>
+            </li>
+          </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Khuyến Mãi" nzIcon="tag" routerLink="/promotiob"></li>
+      <li nz-submenu nzOpen nzTitle="Địa chỉ" nzIcon="environment" routerLink="/qldiachi"></li>
+      <li nz-submenu nzOpen nzTitle="Xe của tôi" nzIcon="car"></li>
+      <li nz-submenu nzOpen nzTitle="Xe yêu thích" nzIcon="heart"></li>
+      <li nz-submenu nzOpen nzTitle="Đăng xuất" nzIcon="logout" (click)="logout()"></li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <div nz-row nzJustify="end">
+          <div nz-col nzSpan="14">
+            <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+            </span>
+          </div>
+          <div nz-col nzSpan="6" style="margin-top: 15px;">
+            <nz-input-group class="search" nzSearch [nzAddOnAfter]="suffixIconButton">
+              <input type="text" nz-input placeholder="input search text" />
+            </nz-input-group>
+            <ng-template #suffixIconButton>
+              <button nz-button nzType="primary" nzSearch>
+                <span nz-icon nzType="search"></span>
+              </button>
+            </ng-template>
+          </div>
+          <div nz-col nzSpan="2"
+          style="display: flex;
+          justify-content: center;
+          align-items: center;">
+            <nz-badge [nzCount]="99" style="margin-top: 15px;">
+              <p nz-icon nzType="bell" nzTheme="twotone" style="font-size: 35px; margin-bottom: 30px;"></p>
+            </nz-badge>
+          </div>
+          <div nz-col nzSpan="2" style="  transform: scale(1.1); margin-bottom: 11px;">
+            <nz-avatar class="avatar" nzIcon="user" style="background-color:#1890ff;"></nz-avatar>
+          </div>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+        <p style="font-weight:bolder; font-size: large;">Quản lý Đặt Xe</p>
+        <button nz-button (click)="addRow()" nzType="primary">Add</button>
+        <br />
+        <br />
+        <nz-table #editRowTable nzBordered [nzData]="listOfData">
+          <thead>
+            <tr>
+              <th>Ngày đặt xe</th>
+              <th>Ngày trả xe</th>
+              <th>Dịa điểm</th>
+              <th>Thụ phí</th>
+              <th>Bảo hiểm</th>
+              <th>Chi tiết giá</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of editRowTable.data" class="editable-row">
+              <td>{{ data.bookingdate }}</td>
+              <td>{{ data.cardate }}</td>
+              <td>{{ data.location }}</td>
+              <td>{{ data.charge}}</td>
+              <td>{{ data.insurance }}</td>
+              <td>{{ data.pricedetails }}</td>
+              <td>
+                <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.bookingdate)">Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+
+

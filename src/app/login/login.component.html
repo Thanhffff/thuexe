@@ -1,0 +1,94 @@
+<div class="nav-bar">
+  <ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
+    <li nz-menu-item nzSelected>
+      <a>ThueXe</a>
+    </li>
+    <li>
+      <p nz-icon nzType="phone"></p>
+      1900 0927
+    </li>
+    <li>
+      <p nz-icon nzType="mail"></p>
+      contact@thuexe.com
+    </li>
+    <li>
+      <p nz-icon nzType="car"></p>
+      Trở thành chủ xe
+    </li>
+    <li nz-menu-item>
+      Đăng nhập
+    </li>
+    <li nz-menu-item (click)="register()">
+      Đăng ký
+    </li>
+    <li>
+      <p nz-icon nzType="line"
+       style="position: absolute;
+       width: 25px;
+       height: 50px;
+       transform: matrix(0, 2, 1, 0, 0, 0);"></p>
+       <span nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;"></span>
+    </li>
+  </ul>
+</div>
+<div [className]="'login'">
+  <h2></h2>
+  <form  nz-form [formGroup]="validateForm" [className]="'login-form'">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your username!">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="text" nz-input formControlName="userName" placeholder="Điện thoại hoặc Emal" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock" [nzSuffix]="suffixTemplate">
+          <input type="password" nz-input formControlName="password" placeholder="Mật khẩu" [type]="passwordVisible ? 'text' : 'password'" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <ng-template #suffixTemplate>
+      <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'" (click)="togglePasswordVisibility()"></i>
+    </ng-template>
+    <div nz-row class="login-container">
+      <div nz-col [nzSpan]="12">
+      </div>
+      <div nz-col [nzSpan]="12" [className]="'login-form'">
+        <a class="login-form-forgot"(click)="showModal()">Quên mật khẩu?</a>
+        <nz-modal
+          [(nzVisible)]="isVisible"
+          nzTitle="Quên mật khẩu"
+          (nzOnCancel)="handleCancel()"
+          (nzOnOk)="handleOk()"
+          [nzOkLoading]="isOkLoading">
+      <p *nzModalContent><nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group nzPrefixIcon="phone">
+            <input type="text" nz-input formControlName="userName" placeholder="Điện thoại hoặc Emal" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item></p>
+    </nz-modal>
+      </div>
+    </div>
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="submitForm()">Đăng nhập</button>
+    <div>Bạn chưa phải thành viên?
+      <a (click)="register()">Đăng ký ngay!</a>
+      <p>_____________________________________________________________________</p>
+    </div>
+    <div style="width: 100%; height: 50px;  display: flex;justify-content: center;">
+      Hoặc đăng nhập bằng tài khoản
+    </div>
+    <div class="button-container">
+      <div class="btn-fb">
+        <button nz-button [nzType]="'primary'"><i nz-icon nzType="facebook"></i>Facebook</button>
+      </div>
+      <div class="btn-gmail">
+        <button nz-button [nzType]="'primary'"><i nz-icon nzType="google"></i>Gmail</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+

@@ -1,0 +1,47 @@
+<ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
+  <li nz-menu-item nzSelected>
+    <a routerLink="/home">ThueXe</a>
+  </li>
+  <li>
+    <p nz-icon nzType="phone"></p>
+    1900 0927
+  </li>
+  <li>
+    <p nz-icon nzType="mail"></p>
+    contact@thuexe.com
+  </li>
+  <li>
+    <p nz-icon nzType="car"></p>
+    Trở thành chủ xe
+  </li>
+  <li nz-submenu nzTitle="Nguyễn Ngọc Thành" nzIcon="user">
+    <ul style="background: #5AB6F2;">
+      <li nz-menu-item routerLink="/taikhoan">Tài khoản</li>
+        <li nz-menu-item routerLink="/xeyeuthich">Xe yêu thích</li>
+        <li nz-menu-item routerLink="/xecuatoi">Xe của tôi</li>
+        <li nz-menu-item routerLink="/chuyencuatoi">Chuyến của tôi</li>
+        <li nz-menu-item routerLink="/diachi">Địa chỉ của tôi</li>
+        <li nz-menu-item routerLink="/thecuatoi">Thẻ của tôi</li>
+        <li nz-menu-item routerLink="/khuyenmai">Khuyến mãi</li>
+        <li nz-menu-item>Giới thiệu bạn mới</li>
+        <li nz-menu-item routerLink="/quatang">Quà tặng</li>
+        <li nz-menu-item routerLink="/changepassword">Đổi mật khẩu</li>
+      <li nz-menu-item (click)="logout()">Đăng xuất</li>
+    </ul>
+  </li>
+  <li>
+    <p nz-icon nzType="line"
+     style="position: absolute;
+     width: 25px;
+     height: 50px;
+     transform: matrix(0, 2, 1, 0, 0, 0);"></p>
+     <span nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;"></span>
+  </li>
+</ul>
+<div>
+  <h1>Đây là giới thiệu bạn bè</h1>
+</div>
+
+
+
+
