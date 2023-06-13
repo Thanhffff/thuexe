@@ -1,47 +1,150 @@
-<ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
-  <li nz-menu-item nzSelected>
-    <a routerLink="/home">ThueXe</a>
-  </li>
-  <li>
-    <p nz-icon nzType="phone"></p>
-    1900 0927
-  </li>
-  <li>
-    <p nz-icon nzType="mail"></p>
-    contact@thuexe.com
-  </li>
-  <li>
-    <p nz-icon nzType="car"></p>
-    Trở thành chủ xe
-  </li>
-  <li nz-submenu nzTitle="Nguyễn Ngọc Thành" nzIcon="user">
-    <ul style="background: #5AB6F2;">
-      <li nz-menu-item routerLink="/taikhoan">Tài khoản</li>
-        <li nz-menu-item routerLink="/xeyeuthich">Xe yêu thích</li>
-        <li nz-menu-item routerLink="/xecuatoi">Xe của tôi</li>
-        <li nz-menu-item routerLink="/chuyencuatoi">Chuyến của tôi</li>
-        <li nz-menu-item routerLink="/diachi">Địa chỉ của tôi</li>
-        <li nz-menu-item routerLink="/thecuatoi">Thẻ của tôi</li>
-        <li nz-menu-item>Khuyến mãi</li>
-        <li nz-menu-item routerLink="/gioithieu">Giới thiệu bạn mới</li>
-        <li nz-menu-item routerLink="/quatang">Quà tặng</li>
-        <li nz-menu-item routerLink="/changepassword">Đổi mật khẩu</li>
-      <li nz-menu-item (click)="logout()">Đăng xuất</li>
-    </ul>
-  </li>
-  <li>
-    <p nz-icon nzType="line"
-     style="position: absolute;
-     width: 25px;
-     height: 50px;
-     transform: matrix(0, 2, 1, 0, 0, 0);"></p>
-     <span nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;"></span>
-  </li>
-</ul>
-<div>
-  <h1>Đây là trang khuyến mãi</h1>
-</div>
-
-
+<nz-layout>
+  <ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
+    <li nz-menu-item nzSelected>
+      <a routerLink="/home">ThueXe</a>
+    </li>
+    <li>
+      <p nz-icon nzType="phone"></p>
+      1900 0927
+    </li>
+    <li>
+      <p nz-icon nzType="mail"></p>
+      contact@thuexe.com
+    </li>
+    <li>
+      <p nz-icon nzType="car"></p>
+      Trở thành chủ xe
+    </li>
+    <li nz-submenu nzTitle="Nguyễn Ngọc Thành" nzIcon="user" routerLink="/taikhoan">
+    </li>
+    <li>
+      <p nz-icon nzType="line"
+       style="position: absolute;
+       width: 25px;
+       height: 50px;
+       transform: matrix(0, 2, 1, 0, 0, 0);"></p>
+       <span nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;"></span>
+    </li>
+  </ul>
+  <nz-content>
+    <div [className]="'layout'">
+      <div nz-row style="margin-left: 250px; margin-top: 90px;">
+        <div nz-col nzFlex="2">
+        <p style="font-size: 30px;font-weight: bold;">Xin Chào Bạn!</p>
+        <ul nz-menu nzMode="horizontal" style="width: 240px; background: none;font-size: 17px;">
+          <li nz-menu-item  style="color: black;" routerLink="/taikhoan">
+            <span nz-icon nzType="user"></span>
+            Tài khoản của tôi
+          </li>
+          <li nz-menu-item style="color: black;" routerLink="/xeyeuthich">
+            <span nz-icon nzType="heart"></span>
+            Xe yêu thích
+          </li>
+          <li nz-menu-item style="color: black;" routerLink="/xecuatoi">
+            <span nz-icon nzType="car"></span>
+            Xe của tôi
+          </li>
+          <li nz-menu-item style="color: black;" routerLink="/chuyencuatoi">
+            <span nz-icon nzType="environment"></span>
+            Chuyến đi của tôi
+          </li>
+          <li nz-menu-item  nzSelected style="color: black;">
+            <span nz-icon nzType="tags"></span>
+            Khuyễn mãi/Quà tặng
+          </li>
+          <li nz-menu-item style="color: black;" routerLink="/diachi">
+            <span nz-icon nzType="profile"></span>
+            Địa chỉ của tôi
+          </li>
+          <li nz-menu-item style="color: black;" routerLink="/changepassword">
+            <span nz-icon nzType="lock"></span>
+            Đổi mật khẩu
+          </li>
+          <li nz-menu-item style="color: black;" (click)="logout()">
+            <span nz-icon nzType="logout"></span>
+            Đăng xuất
+          </li>
+        </ul>
+        </div>
+        <div nz-col nzFlex="3">
+        <p style="font-size: 30px;font-weight: bold; margin-left: -200px;">Khuyến mãi/Quà tặng</p>
+            <nz-tabset  style="margin-left: -200px;">
+              <nz-tab nzTitle="Khuyến mãi">
+                <div style="background: white;
+                position: relative;
+                height: 250px;
+                width: 80%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 20%;
+                border-radius: 20px;
+                ">
+                <input type="text" placeholder="Nhập mã khuyến mãi" style="width:90%;height: 50px;border-radius: 10px;margin-left: 30px;margin-top: 15px;">
+                </div>
+              </nz-tab>
+              <nz-tab nzTitle="Quà tặng">
+                <img src="../../assets/image/quatang.png" alt="" style="margin-left: 200px;">
+              </nz-tab>
+            </nz-tabset>
+        </div>
+      </div>
+      </div>
+  </nz-content>
+  <br>
+  <br>
+  <nz-footer style="background: white;">
+      <div nz-row nzJustify="space-evenly" style="background: white;">
+        <div nz-col nzSpan="4">
+          <p style="font-size: 40px; color: #5AB6F2;">ThueXe</p>
+          <p>19009217</p>
+          <p>Hổ trợ 7AM-10PM</p>
+          <p>contact@thuexe.vn</p>
+          <p>Đặt câu hỏi cho ThueXe</p>
+          <div nz-row style="background: white;">
+            <div nz-col nzSpan="8">
+             <span nz-icon nzType="facebook" nzTheme="outline" style="font-size: 25px;"></span></div>
+            <div nz-col nzSpan="8">
+              <span nz-icon nzType="twitter" nzTheme="outline"style="font-size: 25px;"></span>
+            </div>
+            <div nz-col nzSpan="8">
+              <span nz-icon nzType="yahoo" nzTheme="outline"style="font-size: 25px;"></span>
+            </div>
+          </div>
+        </div>
+        <div nz-col nzSpan="4">
+          <br>
+          <p style="color: black; font-weight: bold; font-size: 15px;">Chính Sách</p>
+          <br>
+          <p>Chính sách và quy định</p>
+          <p>Quy chế hoạt động</p>
+          <p>Bảo mật thông tin</p>
+          <p>Giải quyết tranh chấp</p>
+        </div>
+        <div nz-col nzSpan="4">
+          <br>
+          <p style="color: black; font-weight: bold; font-size: 15px;">Tìm hiểu thêm</p>
+          <br>
+          <div nz-row style="background: white;">
+            <div nz-col nzSpan="8">
+              <p>Hướng dẫn chung</p>
+              <p>Hướng dẫn đặt xe</p>
+              <p>Hướng dẫn thanh toán</p>
+            </div>
+            <div nz-col nzSpan="8" nzOffset="8">
+              <p>Hỏi và trả lời</p>
+              <p>Thuexe Blog</p>
+              <p>Tuyển dụng</p>
+            </div>
+          </div>
+        </div>
+        <div nz-col nzSpan="4"><br>
+          <p style="color: black; font-weight: bold; font-size: 15px;">Đối Tác</p>
+          <br>
+          <p>Đăng ký chủ xe ThueXe</p>
+          <p>Đăng ký GPS MITRACK 4G</p>
+        </div>
+      </div>
+  </nz-footer>
+</nz-layout>
 
 

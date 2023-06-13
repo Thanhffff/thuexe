@@ -1,41 +1,271 @@
- <ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
-    <li nz-menu-item nzSelected>
-      <a routerLink="/home">ThueXe</a>
-    </li>
-    <li>
-      <p nz-icon nzType="phone"></p>
-      1900 0927
-    </li>
-    <li>
-      <p nz-icon nzType="mail"></p>
-      contact@thuexe.com
-    </li>
-    <li>
-      <p nz-icon nzType="car"></p>
-      Trở thành chủ xe
-    </li>
-    <li nz-submenu nzTitle="Nguyễn Ngọc Thành" nzIcon="user">
-      <ul style="background: #5AB6F2;">
-        <li nz-menu-item routerLink="/taikhoan">Tài khoản</li>
-        <li nz-menu-item routerLink="/xeyeuthich">Xe yêu thích</li>
-        <li nz-menu-item routerLink="/xecuatoi">Xe của tôi</li>
-        <li nz-menu-item routerLink="/chuyencuatoi">Chuyến của tôi</li>
-        <li nz-menu-item routerLink="/diachi">Địa chỉ của tôi</li>
-        <li nz-menu-item routerLink="/thecuatoi">Thẻ của tôi</li>
-        <li nz-menu-item routerLink="/khuyenmai">Khuyến mãi</li>
-        <li nz-menu-item routerLink="/gioithieu">Giới thiệu bạn mới</li>
-        <li nz-menu-item routerLink="/quatang">Quà tặng</li>
-        <li nz-menu-item routerLink="/changepassword">Đổi mật khẩu</li>
-        <li nz-menu-item (click)="logout()">Đăng xuất</li>
-      </ul>
-    </li>
-    <li>
-      <p nz-icon nzType="line"
-       style="position: absolute;
-       width: 25px;
-       height: 50px;
-       transform: matrix(0, 2, 1, 0, 0, 0);"></p>
-       <nz-badge nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;" [nzCount]="200"></nz-badge>
-    </li>
-  </ul>
+<nz-layout>
+    <ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
+      <li nz-menu-item nzSelected>
+        <a routerLink="/home">ThueXe</a>
+      </li>
+      <li>
+        <p nz-icon nzType="phone"></p>
+        1900 0927
+      </li>
+      <li>
+        <p nz-icon nzType="mail"></p>
+        contact@thuexe.com
+      </li>
+      <li>
+        <p nz-icon nzType="car"></p>
+        Trở thành chủ xe
+      </li>
+      <li nz-submenu nzTitle="Nguyễn Ngọc Thành" nzIcon="user" routerLink="/taikhoan">
+      </li>
+      <li>
+        <p nz-icon nzType="line"
+         style="position: absolute;
+         width: 25px;
+         height: 50px;
+         transform: matrix(0, 2, 1, 0, 0, 0);"></p>
+         <nz-badge nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;" [nzCount]="200"></nz-badge>
+      </li>
+    </ul>
+  <nz-content>
+      <div class="background" style="background-image: url('../../assets/image/thuexebg.png');
+      position: relative;
+      height: 600px;
+      width: 80%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 20%;
+      border-radius: 30px;
+      margin: 0 auto;">
+      <h1 style="
+      color: aliceblue;
+      margin: 20px;
+      width: 500px;
+      height: 500px;
+      font-size: 50px;
+      margin: 0 350px;
+      text-align: center;
+      transform: translate(3%, 40%);
+      ">ThueXe-Cùng Bạn Đến Mọi Hành Trình</h1>
+        <nz-tabset nzCentered style="margin-top:-100px; color: white; width: 80%; margin-left: 125px;box-shadow: 0px 8px 32px 0px rgba(131, 131, 248, 0.33); border-radius: 10px;">
+          <nz-tab nzTitle="Xe tự lái">
+            <nz-table>
+              <div nz-row nzJustify="space-between" style="background: white; height: 190px;transform: translate(4%, 15%);">
+                <div nz-col nzSpan="4">
+                  <th style="color: darkgrey; font-size: 17px;"><span nz-icon nzType="environment" nzTheme="outline">
+                  </span>Địa điểm
+                  <input nz-input placeholder="Nhập địa điểm đến" style="width: 200px; height: 30px;"/></th>
+                </div>
+                <div nz-col nzSpan="4">
+                  <th style="color: darkgrey; font-size: 17px;">
+                    <span nz-icon nzType="calendar" nzTheme="outline">
+                    </span>Bắt đầu
+                    <nz-date-picker style="width: 200px; height: 30px;"
+                    [nzDisabledDate]="disabledStartDate"
+                    nzShowTime
+                    nzFormat="yyyy-MM-dd HH:mm:ss"
+                    [(ngModel)]="startValue"
+                    nzPlaceHolder="Start"
+                    (nzOnOpenChange)="handleStartOpenChange($event)">
+                  </nz-date-picker>
+                  </th>
+                </div>
+                <div nz-col nzSpan="4"><th style="color: darkgrey; font-size: 17px;">
+                  <span nz-icon nzType="calendar" nzTheme="outline">
+                  </span>
+                  Kết thúc
+                  <nz-date-picker style="width: 200px; height: 30px;"
+                  #endDatePicker
+                  [nzDisabledDate]="disabledEndDate"
+                  nzShowTime
+                  nzFormat="yyyy-MM-dd HH:mm:ss"
+                  [(ngModel)]="endValue"
+                  nzPlaceHolder="End"
+                  (nzOnOpenChange)="handleEndOpenChange($event)"
+                ></nz-date-picker>
+                </th></div>
+                <div nz-col nzSpan="4">
+                  <br>
+                  <button nz-button
+                  style="background-color: #5fcf86; color: white; font-size: 18px; border-radius: 10px;
+                   box-shadow:1px 2px 2px 1px #5AB6F2; width: 100px; height: 50px; margin-top: -5px;">
+                    Tìm Xe</button></div>
+              </div>
+            </nz-table>
+          </nz-tab>
+          <nz-tab nzTitle="Xe có tài xế">
+            <nz-tabset style=" background: white; height: 300px;">
+              <nz-tab nzTitle="Nội thành">
+                <div nz-row style="margin-right:20px; background: white;">
+                  <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="environment" nzTheme="outline">
+                      </span>Điểm đón <br>
+                      <input nz-input placeholder="Nhập địa điểm đón" style="width: 200px; height: 30px;"/>
+                    </th> <br>
+                    <p>Di chuyển trong thành phố</p>
+                  </div>
+                  <div nz-col [nzXs]="{ span: 11, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                  </div>
+                  <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <button nz-button
+                    style="background-color: #5fcf86; color: white; font-size: 17px; border-radius: 10px;
+                     box-shadow:1px 2px 2px 1px #5AB6F2; width: 100px; height: 50px; margin-left: 50px; margin-top: 10px;">
+                      Tìm Xe</button>
+                  </div>
+                </div>
+                <br>
+                <div nz-row style="margin-right:20px; background: white;">
+                  <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="calendar" nzTheme="outline">
+                      </span>Bắt đầu
+                      <br>
+                      <nz-date-picker style="width: 200px; height: 30px;"
+                       [nzRenderExtraFooter]="plainFooter" nzShowTime></nz-date-picker>
+                    </th>
+                  </div>
+                  <div nz-col [nzXs]="{ span: 11, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="check-circle" nzTheme="outline"></span>Thời gian thuê <br>
+                      <nz-select ngModel="lucy" style="width: 200px; height: 30px;">
+                        <nz-option nzValue="jack" nzLabel="Tùy Chỉnh"></nz-option>
+                        <nz-option nzValue="lucy" nzLabel="2 tiếng"></nz-option>
+                        <nz-option nzValue="4tieng" nzLabel="4 tiếng"></nz-option>
+                      </nz-select>
+                    </th>
+                  </div>
+                  <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="calendar" nzTheme="outline">
+                      </span>
+                      Kết thúc <br>
+                      <nz-date-picker style="width: 200px; height: 30px;"
+                       [nzRenderExtraFooter]="plainFooterend" nzShowTime></nz-date-picker>
+                    </th>
+                  </div>
+                </div>
 
+              </nz-tab>
+              <nz-tab nzTitle="Liên tỉnh">
+                <div nz-row style="margin-right:20px; background: white;">
+                  <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="environment" nzTheme="outline">
+                      </span>Điểm đón <br>
+                      <input nz-input placeholder="Nhập địa điểm đón" style="width: 200px; height: 30px;"/>
+                    </th> <br>
+                      <label nz-checkbox [(ngModel)]="checked"  style="width: 170px; height: 20px;">Tui muốn đi 1 chiều</label>
+                  </div>
+                  <div nz-col [nzXs]="{ span: 11, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="environment" nzTheme="outline">
+                      </span>Điểm đến <br>
+                      <input nz-input placeholder="Nhập địa điểm đón" style="width: 200px; height: 30px;"/>
+                    </th>
+                  </div>
+                  <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <button nz-button
+                    style="background-color: #5fcf86; color: white; font-size: 17px; border-radius: 10px;
+                     box-shadow:1px 2px 2px 1px #5AB6F2; width: 100px; height: 50px; margin-left: 50px; margin-top: 10px;">
+                      Tìm Xe</button>
+                  </div>
+                </div>
+                <br>
+                <div nz-row style="margin-right:20px; background: white;">
+                  <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="calendar" nzTheme="outline">
+                      </span>Bắt đầu
+                      <br>
+                      <nz-date-picker style="width: 200px; height: 30px;"
+                       [nzRenderExtraFooter]="plainFooter" nzShowTime></nz-date-picker>
+                    </th>
+                  </div>
+                  <div nz-col [nzXs]="{ span: 11, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="check-circle" nzTheme="outline"></span>Thời gian thuê <br>
+                      <nz-select ngModel="lucy" style="width: 200px; height: 30px;">
+                        <nz-option nzValue="jack" nzLabel="Tùy Chỉnh"></nz-option>
+                        <nz-option nzValue="lucy" nzLabel="2 tiếng"></nz-option>
+                        <nz-option nzValue="4tieng" nzLabel="4 tiếng"></nz-option>
+                      </nz-select>
+                    </th>
+                  </div>
+                  <div nz-col [nzXs]="{ span: 5, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+                    <th style="color: darkgrey; font-size: 17px;">
+                      <span nz-icon nzType="calendar" nzTheme="outline">
+                      </span>
+                      Kết thúc <br>
+                      <nz-date-picker style="width: 200px; height: 30px;"
+                       [nzRenderExtraFooter]="plainFooterend" nzShowTime></nz-date-picker>
+                    </th>
+                  </div>
+                </div>
+              </nz-tab>
+            </nz-tabset>
+          </nz-tab>
+        </nz-tabset>
+      </div>
+  </nz-content>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <nz-footer style="background: white;">
+      <div nz-row nzJustify="space-evenly" style="background: white;">
+        <div nz-col nzSpan="4">
+          <p style="font-size: 40px; color: #5AB6F2;">ThueXe</p>
+          <p>19009217</p>
+          <p>Hổ trợ 7AM-10PM</p>
+          <p>contact@thuexe.vn</p>
+          <p>Đặt câu hỏi cho ThueXe</p>
+          <div nz-row style="background: white;">
+            <div nz-col nzSpan="8">
+             <span nz-icon nzType="facebook" nzTheme="outline" style="font-size: 25px;"></span></div>
+            <div nz-col nzSpan="8">
+              <span nz-icon nzType="twitter" nzTheme="outline"style="font-size: 25px;"></span>
+            </div>
+            <div nz-col nzSpan="8">
+              <span nz-icon nzType="yahoo" nzTheme="outline"style="font-size: 25px;"></span>
+            </div>
+          </div>
+        </div>
+        <div nz-col nzSpan="4">
+          <br>
+          <p style="color: black; font-weight: bold; font-size: 15px;">Chính Sách</p>
+          <br>
+          <p>Chính sách và quy định</p>
+          <p>Quy chế hoạt động</p>
+          <p>Bảo mật thông tin</p>
+          <p>Giải quyết tranh chấp</p>
+        </div>
+        <div nz-col nzSpan="4">
+          <br>
+          <p style="color: black; font-weight: bold; font-size: 15px;">Tìm hiểu thêm</p>
+          <br>
+          <div nz-row style="background: white;">
+            <div nz-col nzSpan="8">
+              <p>Hướng dẫn chung</p>
+              <p>Hướng dẫn đặt xe</p>
+              <p>Hướng dẫn thanh toán</p>
+            </div>
+            <div nz-col nzSpan="8" nzOffset="8">
+              <p>Hỏi và trả lời</p>
+              <p>Thuexe Blog</p>
+              <p>Tuyển dụng</p>
+            </div>
+          </div>
+        </div>
+        <div nz-col nzSpan="4"><br>
+          <p style="color: black; font-weight: bold; font-size: 15px;">Đối Tác</p>
+          <br>
+          <p>Đăng ký chủ xe ThueXe</p>
+          <p>Đăng ký GPS MITRACK 4G</p>
+        </div>
+      </div>
+  </nz-footer>
+</nz-layout>

@@ -19,22 +19,22 @@
       <li nz-submenu nzOpen nzTitle="Đặt Xe" nzIcon="setting" routerLink="/datxe"></li>
       <li nz-submenu nzOpen nzTitle="Lịch Sử Đặt Xe" nzIcon="folder-open" routerLink="/history"></li>
       <li nz-submenu nzTitle="Phân quyền" nzIcon="team" style="background: #1890ff;">
-       <ul>
-        <li nz-menu-item nzMatchRoute routerLink="/manage">
-          <a>Quản lý phân quyền</a>
-        </li>
-          <li nz-menu-item nzMatchRouter routerLink="/chucvu">
-            <a>Quản lý chức vụ</a>
+        <ul>
+          <li nz-menu-item nzMatchRoute routerLink="/manage">
+            <a>Quản lý phân quyền</a>
           </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Quản lý màn hình</a>
-          </li>
-        </ul>
+            <li nz-menu-item nzMatchRouter routerLink="/chucvu">
+              <a>Quản lý chức vụ</a>
+            </li>
+            <li nz-menu-item nzMatchRouter routerLink="/manhinh">
+              <a>Quản lý màn hình</a>
+            </li>
+          </ul>
       </li>
       <li nz-submenu nzOpen nzTitle="Khuyến Mãi" nzIcon="tag" routerLink="/promotion"></li>
       <li nz-submenu nzOpen nzTitle="Địa chỉ" nzIcon="environment" routerLink="/qldiachi"></li>
       <li nz-submenu nzOpen nzTitle="Xe của tôi" nzIcon="car" routerLink="/mycar"></li>
-      <li nz-submenu nzOpen nzTitle="Xe yêu thích" nzIcon="heart" routerLink="/carlove"></li>
+      <li nz-submenu nzOpen nzTitle="Xe yêu thích" nzIcon="heart"></li>
       <li nz-submenu nzOpen nzTitle="Đăng xuất" nzIcon="logout" (click)="logout()"></li>
     </ul>
   </nz-sider>
@@ -74,25 +74,30 @@
     <nz-content>
       <div class="inner-content">
         <router-outlet></router-outlet>
-        <p style="font-weight:bolder; font-size: large;">Quản Lí Màn Hình</p>
+        <p style="font-weight:bolder; font-size: large;">Quản Lí Xe Yêu Thích</p>
         <button nz-button (click)="addRow()" nzType="primary">Add</button>
         <br />
         <br />
         <nz-table #editRowTable nzBordered [nzData]="listOfData">
           <thead>
             <tr>
-              <th>STT</th>
-              <th>Tên Màn Hình</th>
-              <th>Action</th>
-
+              <th>Tên xe</th>
+              <th>Tên hiển thị</th>
+              <th>Loại Tài Khoản</th>
+              <th>Danh mục đã chọn</th>
+              <th>Hình ảnh</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let data of editRowTable.data" class="editable-row">
-              <td>{{ data.id }}</td>
-              <td>{{ data.manhinh }}</td>
+              <td>{{ data.nameid }}</td>
+              <td>{{ data.name }}</td>
+              <td>{{ data.loaitk }}</td>
+              <td>{{ data.danhmuc }}</td>
+              <img src="{{imageUrl}}" alt="Honda Civic" style="width: 90px; height: 70px; padding: 10px; margin-left: auto; margin-right: auto; display: flex; justify-content: center;">
               <td>
-                <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.id)">Delete</a>
+                <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data.nameid)">Delete</a>
               </td>
             </tr>
           </tbody>

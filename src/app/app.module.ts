@@ -54,6 +54,14 @@ import { QlmanhinhComponent } from './admin/qlmanhinh/qlmanhinh.component';
 import { QlchucvuComponent } from './admin/qlchucvu/qlchucvu.component';
 import { PromotionComponent } from './admin/promotion/promotion.component';
 import { AddressComponent } from './admin/address/address.component';
+import { MycarComponent } from './admin/mycar/mycar.component';
+import { CarloveComponent } from './admin/carlove/carlove.component';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzImageModule } from 'ng-zorro-antd/image';
 registerLocaleData(en);
 
 @NgModule({
@@ -84,6 +92,8 @@ registerLocaleData(en);
     QlchucvuComponent,
     PromotionComponent,
     AddressComponent,
+    MycarComponent,
+    CarloveComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,7 +120,13 @@ registerLocaleData(en);
     NzProgressModule,
     NzCardModule,
     NzStatisticModule,
-    NzTableModule
+    NzTableModule,
+    NzTabsModule,
+    NzDatePickerModule,
+    NzRadioModule,
+    NzSelectModule,
+    NzUploadModule,
+    NzImageModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

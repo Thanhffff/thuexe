@@ -24,8 +24,10 @@ import { QlmanhinhComponent } from './admin/qlmanhinh/qlmanhinh.component';
 import { QlchucvuComponent } from './admin/qlchucvu/qlchucvu.component';
 import { PromotionComponent } from './admin/promotion/promotion.component';
 import { AddressComponent } from './admin/address/address.component';
+import { MycarComponent } from './admin/mycar/mycar.component';
+import { CarloveComponent } from './admin/carlove/carlove.component';
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component:HomeComponent },
   { path: 'login', component:LoginComponent },
   { path: 'register',component:RegisterComponent},
@@ -50,6 +52,8 @@ const routes: Routes = [
   { path: 'chucvu', component:QlchucvuComponent},
   { path: 'promotion', component:PromotionComponent},
   { path: 'qldiachi', component:AddressComponent},
+  { path: 'carlove', component:CarloveComponent},
+  { path: 'mycar', component:MycarComponent}
 ];
 
 @NgModule({

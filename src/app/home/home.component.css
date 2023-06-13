@@ -7,3 +7,17 @@ ul li a{
 ul li{
   color: white;
 }
+[nz-button] {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+
+nz-button-group [nz-button] {
+  margin-right: 0;
+}
+[nz-row] {
+  background-color: rgba(128, 128, 128, 0.08);
+}
+nz-date-picker {
+  margin: 0 8px 12px 0;
+}

@@ -14,4 +14,19 @@ export class ChuyencuatoiComponent {
     // Navigate to the login page
     this.router.navigate(['/login']);
   }
+  isVisible = false;
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
+  }
+  radioValue = 'A';
 }
