@@ -28,15 +28,15 @@
   </ul>
   <nz-content  style="background: white;">
     <div [className]="'layout'">
-      <div nz-row style="margin-left: 250px; margin-top: 90px;">
+      <div nz-row style="margin-left: 200px; margin-top: 90px;">
         <div nz-col nzFlex="2">
         <p style="font-size: 30px;font-weight: bold;">Xe của tôi</p>
         <ul nz-menu nzMode="horizontal" style="width: 240px; background: none;font-size: 17px;">
           <li nz-menu-item  nzSelected  style="color: black;" routerLink="/xecuatoi">
-            <span nz-icon nzType="car"></span>
+            <span nz-icon nzSelected nzType="car"></span>
             Danh sách xe
           </li>
-          <li nz-menu-item style="color: black;">
+          <li nz-menu-item style="color: black;" routerLink="/calendar">
             <span nz-icon nzType="file"></span>
             Lịch chung
           </li>
@@ -48,7 +48,7 @@
             <span nz-icon nzType="environment"></span>
             GPS không dây
           </li>
-          <li nz-menu-item style="color: black;">
+          <li nz-menu-item style="color: black;" routerLink="/contract">
             <span nz-icon nzType="tags"></span>
             Hợp đồng mẫu
           </li>

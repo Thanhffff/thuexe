@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-quatang',
-  templateUrl: './quatang.component.html',
-  styleUrls: ['./quatang.component.css']
+  selector: 'app-contract',
+  templateUrl: './contract.component.html',
+  styleUrls: ['./contract.component.css']
 })
-export class QuatangComponent {
+export class ContractComponent {
   constructor(private router: Router) { }
-  logout(): void {
+  onBack(): void {
     // Perform any necessary logout actions here
     // For example, clearing session data or token
 
     // Navigate to the login page
-    this.router.navigate(['/login']);
+    this.router.navigate(['/xecuatoi']);
   }
 }

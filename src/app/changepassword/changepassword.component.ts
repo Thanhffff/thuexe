@@ -14,4 +14,10 @@ export class ChangepasswordComponent {
     // Navigate to the login page
     this.router.navigate(['/login']);
   }
+  passwordVisible = false;
+  password?: string;
+  passwordVisible1 = false;
+  password1?: string;
+  passwordVisible2 = false;
+  password2?: string;
 }

@@ -1,0 +1,64 @@
+<nz-layout>
+  <ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
+    <li nz-menu-item nzSelected>
+      <a routerLink="/home">ThueXe</a>
+    </li>
+    <li>
+      <p nz-icon nzType="phone"></p>
+      1900 0927
+    </li>
+    <li>
+      <p nz-icon nzType="mail"></p>
+      contact@thuexe.com
+    </li>
+    <li>
+      <p nz-icon nzType="car"></p>
+      Trở thành chủ xe
+    </li>
+    <li nz-submenu nzTitle="Nguyễn Ngọc Thành" nzIcon="user" routerLink="/taikhoan">
+    </li>
+    <li>
+      <p nz-icon nzType="line"
+       style="position: absolute;
+       width: 25px;
+       height: 50px;
+       transform: matrix(0, 2, 1, 0, 0, 0);"></p>
+       <span nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;"></span>
+    </li>
+  </ul>
+  <nz-content  style="background: white;">
+    <div>
+      <p style="font-weight: bold;font-size: 40px;margin-left: 38%;margin-top: 50px;">Quản lí lịch chung</p>
+      <span>
+        <nz-page-header style="margin-top: -100px;"
+      class="site-page-header"
+      (nzBack)="onBack()"
+      nzBackIcon
+      nzTitle="Quay lại"
+    ></nz-page-header>
+      </span>
+    </div>
+    <div style="margin-left: 14%; margin-top: 50px;">
+      <nz-select ngModel="jack" style="width: 150px;">
+        <nz-option nzValue="jack" nzLabel="Tên xe"></nz-option>
+        <nz-option nzValue="lucy" nzLabel="Giá mặc định"></nz-option>
+        <nz-option nzValue="lucy" nzLabel="Biển số"></nz-option>
+      </nz-select>
+      <input type="text" nz-input placeholder=" Lọc theo tên hoặc biển số" style="border-radius: 10px; width: 300px; height: 40px; margin-left: 10px;">
+    </div>
+    <div>
+      <div>
+        <p style="margin-left: 55%; margin-top: -45px;">Giá mặc định</p>
+        <p style="margin-left: 65%; margin-top: -37px;">Lặp lại tuần</p>
+        <p style="margin-left: 75%; margin-top: -36px;">Ngày đặt</p>
+        <p style="margin-left: 85%; margin-top: -35px;">Chờ cọc</p>
+      </div>
+      <div>
+        <p style="margin-left: 55%; margin-top: -15px;color: #5AB6F2;">Giá tùy chỉnh</p>
+        <p style="margin-left: 65%; margin-top: -35px;">Ngày trống</p>
+        <p style="margin-left:75%; margin-top: -35px;">Ngày bận</p>
+        <p style="margin-left: 85%; margin-top: -35px;">Chờ duyệt</p>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>

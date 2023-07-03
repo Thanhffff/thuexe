@@ -11,7 +11,52 @@ ul li{
   margin-right: 8px;
   margin-bottom: 12px;
 }
-
+.ul-user{
+  background: #5AB6F2;
+  justify-content: space-between;
+  display: flex;
+}
+.ul-item{
+  background: #5AB6F2;
+  justify-content: space-between;
+  display: flex;
+}
+.h1-tieude{
+      color: aliceblue;
+      margin: 20px;
+      width: 500px;
+      height: 500px;
+      font-size: 50px;
+      margin: 0 350px;
+      text-align: center;
+      transform: translate(3%, 40%);
+}
+.background{
+      background-image: url('../../assets/image/thuexebg.png');
+      position: relative;
+      height: 600px;
+      width: 80%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 20%;
+      border-radius: 30px;
+      margin: 0 auto;
+}
+.tabset{
+ display: inline;
+}
+.div-row{
+  height: 190px;
+  transform: translate(4%, 15%);
+}
+.col-2{
+  margin-left: 350px;
+  margin-top: -57px;
+}
+.col-3{
+  margin-left: 600px;
+  margin-top: -70px;
+}
 nz-button-group [nz-button] {
   margin-right: 0;
 }
@@ -20,4 +65,109 @@ nz-button-group [nz-button] {
 }
 nz-date-picker {
   margin: 0 8px 12px 0;
+}
+.tabset-1{
+  margin-top:-100px;
+  color: white;
+  width: 80%;
+  margin-left: 125px;
+  box-shadow: 0px 8px 32px 0px rgba(131, 131, 248, 0.33);
+  border-radius: 10px;
+}
+.tabset-2{
+  background: white;
+  height: 300px;
+}
+.button{
+  background-color: #5fcf86;
+   color: white;
+    font-size: 17px;
+    border-radius: 10px;
+   box-shadow:1px 2px 2px 1px #5AB6F2;
+   width: 100px;
+   height: 50px;
+   margin-left: 50px;
+   margin-top: 10px;
+}
+.row-nt{
+  margin-right:20px;
+  background: white;
+}
+.row-n{
+  margin-right:20px;
+  background: white;
+}
+.row-lt1{
+  margin-right:20px;
+  background: white;
+}
+.row-lt2{
+  margin-right:20px;
+  background: white;
+}
+.row-footer{
+  background: white;
+}
+.col-footer{
+  display: inline;
+}
+@media screen and (max-width:1080px){
+  .ul-user {
+    display: none;
+  }
+  .h1-tieude {
+    display: none;
+  }
+  .background{
+    margin-top: 100px;
+  }
+  .div-row{
+    margin-left: -100px;
+  }
+  .div-row{
+    height: 350px;
+    margin-top: -30px;
+  }
+  .div-row div{
+    margin-top:10px;
+    margin-left: 100px;
+  }
+  .tabset-1{
+    margin-left: 40px;
+  }
+  .tabset-2 p{
+    display: none;
+  }
+  .tabset-2{
+    height: 510px;
+  }
+  .row-n{
+    display: flex;
+    flex-direction: column;
+  }
+  .row-nt{
+    display: flex;
+    flex-direction: column;
+  }
+  .row-lt1{
+    display: flex;
+    flex-direction: column;
+  }
+  .row-lt2{
+    display: flex;
+    flex-direction: column;
+  }
+  .row-footer{
+    display: flex;
+    flex-direction: column;
+  }
+  .col-footer{
+    display: none;
+  }
+}
+@media screen and (min-width:1081px){
+  .ul-item {
+    display: none;
+  }
+
 }

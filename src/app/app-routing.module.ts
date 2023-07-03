@@ -8,7 +8,6 @@ import { TaikhoanComponent } from './taikhoan/taikhoan.component';
 import { XeyeuthichComponent } from './xeyeuthich/xeyeuthich.component';
 import { XecuatoiComponent } from './xecuatoi/xecuatoi.component';
 import { ThecuatoiComponent } from './thecuatoi/thecuatoi.component';
-import { QuatangComponent } from './quatang/quatang.component';
 import { KhuyenmaiComponent } from './khuyenmai/khuyenmai.component';
 import { GioithieuComponent } from './gioithieu/gioithieu.component';
 import { DiachiComponent } from './diachi/diachi.component';
@@ -26,6 +25,8 @@ import { PromotionComponent } from './admin/promotion/promotion.component';
 import { AddressComponent } from './admin/address/address.component';
 import { MycarComponent } from './admin/mycar/mycar.component';
 import { CarloveComponent } from './admin/carlove/carlove.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ContractComponent } from './contract/contract.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component:HomeComponent },
@@ -36,7 +37,6 @@ const routes: Routes = [
   { path: 'xeyeuthich', component:XeyeuthichComponent},
   { path: 'xecuatoi', component:XecuatoiComponent},
   { path: 'thecuatoi', component:ThecuatoiComponent},
-  { path: 'quatang', component:QuatangComponent},
   { path: 'khuyenmai', component:KhuyenmaiComponent},
   { path: 'gioithieu', component:GioithieuComponent},
   { path: 'diachi', component:DiachiComponent},
@@ -53,7 +53,9 @@ const routes: Routes = [
   { path: 'promotion', component:PromotionComponent},
   { path: 'qldiachi', component:AddressComponent},
   { path: 'carlove', component:CarloveComponent},
-  { path: 'mycar', component:MycarComponent}
+  { path: 'mycar', component:MycarComponent},
+  { path: 'calendar', component:CalendarComponent},
+  { path: 'contract', component:ContractComponent},
 ];
 
 @NgModule({

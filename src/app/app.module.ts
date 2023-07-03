@@ -34,7 +34,6 @@ import { DiachiComponent } from './diachi/diachi.component';
 import { ThecuatoiComponent } from './thecuatoi/thecuatoi.component';
 import { KhuyenmaiComponent } from './khuyenmai/khuyenmai.component';
 import { GioithieuComponent } from './gioithieu/gioithieu.component';
-import { QuatangComponent } from './quatang/quatang.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
@@ -43,7 +42,7 @@ import { LoginadminComponent } from './admin/loginadmin/loginadmin.component';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UserComponent } from './admin/user/user.component';
-import { NzProgressModule } from 'ng-zorro-antd/progress';;
+import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzTableModule } from 'ng-zorro-antd/table';
@@ -62,6 +61,12 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzImageModule } from 'ng-zorro-antd/image';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
+import { CalendarComponent } from './calendar/calendar.component';
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { ContractComponent } from './contract/contract.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -80,7 +85,6 @@ registerLocaleData(en);
     ThecuatoiComponent,
     KhuyenmaiComponent,
     GioithieuComponent,
-    QuatangComponent,
     ChangepasswordComponent,
     LoginadminComponent,
     DashboardComponent,
@@ -94,6 +98,8 @@ registerLocaleData(en);
     AddressComponent,
     MycarComponent,
     CarloveComponent,
+    CalendarComponent,
+    ContractComponent,
   ],
   imports: [
     BrowserModule,
@@ -126,7 +132,11 @@ registerLocaleData(en);
     NzRadioModule,
     NzSelectModule,
     NzUploadModule,
-    NzImageModule
+    NzImageModule,
+    NzDrawerModule,
+    NzSwitchModule,
+    NzSegmentedModule,
+    NzPageHeaderModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

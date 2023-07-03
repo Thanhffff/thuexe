@@ -28,7 +28,7 @@
   </ul>
   <nz-content>
     <div [className]="'layout'">
-      <div nz-row style="margin-left: 250px; margin-top: 90px;">
+      <div nz-row style="margin-left: 200px; margin-top: 90px;">
         <div nz-col nzFlex="2">
         <p style="font-size: 30px;font-weight: bold;">Xin Chào Bạn!</p>
         <ul nz-menu nzMode="horizontal" style="width: 240px; background: none;font-size: 17px;">
@@ -80,7 +80,62 @@
                 ">
                 <br>
                 <span style="font-size: 20px; font-weight: bold; margin-left: 30px;">Địa chỉ đã lưu</span>
-                <button style="border-radius: 10px;margin-left: 600px;height: 40px;margin-top: -500px;">Thêm địa chỉ mới</button>
+                <button (click)="open()" style="border-radius: 10px;margin-left: 600px;height: 40px;margin-top: -500px;">Thêm địa chỉ mới</button>
+                <nz-drawer
+      [nzBodyStyle]="{ overflow: 'auto' }"
+      [nzMaskClosable]="false"
+      [nzWidth]="720"
+      [nzVisible]="visible"
+      nzTitle="Create"
+      [nzFooter]="footerTpl"
+      (nzOnClose)="close()"
+    >
+      <form nz-form *nzDrawerContent>
+        <div>
+        <p style="font-size: 30px; font-weight: bold;">Thêm địa chỉ mới</p>
+        <p>Loại địa điểm</p>
+        <p style="font-weight: bold; margin-left: 450px; margin-top: -30px;">Đặt làm địa chỉ mặc định <nz-switch [(ngModel)]="switchValue"></nz-switch></p>
+        <nz-segmented [nzOptions]="options" (nzValueChange)="handleIndexChange($event)" style="background: white;"></nz-segmented>
+        <!-- <button style="border-radius: 10px;width:120px;height: 50px;" nz-radio-button><span nz-icon nzType="home" nzTheme="outline"></span>Nhà riêng</button>
+        <button style="border-radius: 10px;width:100px;height: 50px;margin-left: 15px;" nz-button><span nz-icon nzType="bank" nzTheme="outline"></span>Công ty</button>
+        <button style="border-radius: 10px;width:100px;height: 50px;margin-left: 15px;" nz-button><span nz-icon nzType="more" nzTheme="outline"></span>Khác</button> -->
+        <p style="margin-top: 10px;">Tên gợi nhớ</p>
+        <input type="text" name="" id="" placeholder="Nhập tên cho địa chỉ của bạn" style="width: 90%; height: 45px; border-radius: 10px;">
+        <div nz-row style="margin-top: 10px;">
+          <div nz-col nzSpan="8">
+            <p>Thành phố</p>
+            <nz-select ngModel="lucy" style="width: 200px;height: 35px;">
+              <nz-option nzValue="jack" nzLabel="Chọn thành phố"></nz-option>
+              <nz-option nzValue="lucy" nzLabel="Hồ Chí Minh"></nz-option>
+            </nz-select>
+          </div>
+          <div nz-col nzSpan="8" >
+            <p>Quận/Huyện</p>
+            <nz-select ngModel="jack" style="width: 200px;height: 35px;">
+              <nz-option nzValue="jack" nzLabel="Chọn thành phố trước"></nz-option>
+            </nz-select>
+          </div>
+          <div nz-col nzSpan="8" >
+            <p>Phường/Xã</p>
+            <nz-select ngModel="jack" style="width: 200px;height: 35px;">
+              <nz-option nzValue="jack" nzLabel="Chọn quận huyện trước"></nz-option>
+            </nz-select>
+          </div>
+        </div>
+        <p style="margin-top: 10px;">Địa chỉ</p>
+        <input type="text" name="" id="" placeholder="Nhập tên đường/Tòa nhà" style="width: 90%; height: 45px; border-radius: 10px;">
+
+
+      </div>
+      </form>
+
+      <ng-template #footerTpl>
+        <div style="float: right">
+          <button nz-button style="margin-right: 8px;" (click)="close()">Hủy</button>
+          <button nz-button nzType="primary" (click)="close()">Xác nhận</button>
+        </div>
+      </ng-template>
+    </nz-drawer>
                 <img src="../../assets/image/diachi.png" alt="" style="height: 60%;margin-left: 270px;">
               </div>
         </div>

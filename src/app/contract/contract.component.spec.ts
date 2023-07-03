@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuatangComponent } from './quatang.component';
+import { ContractComponent } from './contract.component';
 
-describe('QuatangComponent', () => {
-  let component: QuatangComponent;
-  let fixture: ComponentFixture<QuatangComponent>;
+describe('ContractComponent', () => {
+  let component: ContractComponent;
+  let fixture: ComponentFixture<ContractComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuatangComponent ]
+      declarations: [ ContractComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(QuatangComponent);
+    fixture = TestBed.createComponent(ContractComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

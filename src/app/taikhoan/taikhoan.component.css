@@ -11,3 +11,214 @@ ul li{
   width: 128px;
   height: 128px;
 }
+.ul-user{
+  background: #5AB6F2;
+  justify-content: space-between;
+  display: flex;
+}
+.ul-item{
+  background: #5AB6F2;
+  justify-content: space-between;
+  display: flex;
+}
+.row-footer{
+  background: white;
+}
+.col-footer{
+  display: inline;
+}
+.layout{
+  margin-left: 200px;
+  margin-top: 90px;
+}
+.setmenu{
+  display: inline;
+}
+.setmenu2{
+  color: black;
+}
+.div-hs{
+  background: white;
+  position: relative;
+  height: 370px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+  border-radius: 20px;
+  margin-left: -200px;
+}
+.div-item{
+  margin-left: 0px;
+}
+.p-item{
+  margin-left: 50px;
+}
+.div-tt{
+  display: inline;
+}
+.p-tt{
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: -200px;
+}
+nz-avatar{
+  background: #5AB6F2;
+  margin-left: 50px;
+}
+.p-items{
+  margin-left: 70px;
+}
+.button-item{
+  font-size: 16px;
+  border-radius: 10px;
+  height: 40px;
+  margin-left: 70px;
+  font-weight: bold;
+}
+.span-1{
+  display: flex;
+  flex-direction: column;
+}
+.span-2{
+  margin-left: 100px;
+}
+.gioithieu{
+  background: white;
+  position: relative;
+  height: 100px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+  border-radius: 20px;
+  margin-left: -200px;
+}
+.the-cua-toi{
+  background: white;
+  position: relative;
+  height: 450px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+  border-radius: 20px;
+  margin-left: -200px;
+}
+.the-cua-toi p{
+  margin-left: 280px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.list-car{
+  background: white;
+  position: relative;
+  height: 450px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+  border-radius: 20px;
+  margin-left: -200px;
+}
+.hinhnen{
+  margin-left: 230px;
+  margin-top: 40px;
+}
+.list-car p{
+  margin-left: 280px;
+  font-size: 17px;
+  font-weight: bold;
+}
+@media screen and (max-width:1080px){
+  .ul-user {
+    display: none;
+  }
+  .row-footer{
+    display: flex;
+    flex-direction: column;
+  }
+  .col-footer{
+    display: none;
+  }
+  .p-tt{
+    display: none;
+  }
+  .setmenu2 p{
+    display: none;
+  }
+  .setmenu{
+    display: none;
+  }
+  .setmenu2{
+    margin-left: -80px;
+    margin-top: -50px;
+    width: 80%;
+  }
+  .div-hs{
+    margin-top: 20px;
+    width: 170%;
+    height: 600px;
+    /* display: flex;
+    flex-direction: column; */
+  }
+  .div-hs button{
+    margin-left: -30px;
+  }
+  .div-item{
+    margin-left: 170px;
+  }
+  .p-item{
+    margin-left: -10px;
+  }
+  nz-avatar{
+    margin-left: -5px;
+  }
+  .p-items{
+    margin-left: 10px;
+  }
+  .button-item{
+    display: none;
+  }
+  .span-1{
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+  }
+  .span-2{
+    margin-left: 10%;
+  }
+  .gioithieu{
+    width: 170%;
+  }
+  .the-cua-toi{
+    width: 170%;
+  }
+  .the-cua-toi button{
+    margin-left: -40px;
+  }
+  .the-cua-toi p{
+    margin-left: 150px;
+  }
+  .list-car{
+    width: 170%;
+  }
+  .list-car nz-tabset{
+    margin-left: -50px;
+  }
+  .list-car img{
+    margin-left: 20%;
+  }
+  .list-car p{
+    margin-left: 30%;
+  }
+}
+@media screen and (min-width:1081px){
+  .ul-item {
+    display: none;
+  }
+  .setmenu2{
+    display: none;
+  }
+
+}

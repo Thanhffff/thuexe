@@ -14,4 +14,19 @@ export class DiachiComponent {
     // Navigate to the login page
     this.router.navigate(['/login']);
   }
+  visible = false;
+
+  open(): void {
+    this.visible = true;
+  }
+
+  close(): void {
+    this.visible = false;
+  }
+  switchValue = false;
+  options = ['Nhà riêng', 'Công ty', 'Khác'];
+
+  handleIndexChange(e: number): void {
+    console.log(e);
+  }
 }

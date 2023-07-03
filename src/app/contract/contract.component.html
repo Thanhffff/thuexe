@@ -1,0 +1,68 @@
+<nz-layout>
+  <ul nz-menu nzMode="horizontal" style="background: #5AB6F2; justify-content: space-between;display: flex;">
+    <li nz-menu-item nzSelected>
+      <a routerLink="/home">ThueXe</a>
+    </li>
+    <li>
+      <p nz-icon nzType="phone"></p>
+      1900 0927
+    </li>
+    <li>
+      <p nz-icon nzType="mail"></p>
+      contact@thuexe.com
+    </li>
+    <li>
+      <p nz-icon nzType="car"></p>
+      Trở thành chủ xe
+    </li>
+    <li nz-submenu nzTitle="Nguyễn Ngọc Thành" nzIcon="user" routerLink="/taikhoan">
+    </li>
+    <li>
+      <p nz-icon nzType="line"
+       style="position: absolute;
+       width: 25px;
+       height: 50px;
+       transform: matrix(0, 2, 1, 0, 0, 0);"></p>
+       <span nz-menu-item nzSelected nz-icon nzType="bell" nzTheme="twotone" style="font-size: 23px; margin-top: 14px;"></span>
+    </li>
+  </ul>
+  <nz-content style="height: 700px;">
+    <div>
+      <p style="font-weight: bold;font-size: 40px;margin-left: 42%;margin-top: 50px;">Hợp đồng mẫu</p>
+      <span>
+        <nz-page-header style="margin-top: -100px;"
+      class="site-page-header"
+      (nzBack)="onBack()"
+      nzBackIcon
+      nzTitle="Quay lại"
+    ></nz-page-header>
+      </span>
+    </div>
+    <div>
+      <img style="margin-left: 670px; margin-top: 50px;"
+      nz-image
+      width="200px"
+      height="200px"
+      nzSrc="../../assets/image/contract.png"
+      alt=""
+    />
+    <p style="margin-left: 630px; margin-top: 10px; font-size: 18px;">Chọn loại hợp đồng bạn muốn xem</p>
+    </div>
+    <div style="margin-left: 580px;">
+      <div style="width: 180px;height: 150px; background-color: white; border-radius: 10px;"><br>
+        <span style="margin-left: 55px;">
+          <nz-avatar nzIcon="car"  [nzSize]="70" style="background-color:#87d068;"></nz-avatar>
+        </span>
+        <p style="font-weight: bold; font-size: 17px;margin-left: 12px;margin-top: 10px;">Hợp đồng cho thuê</p>
+      </div>
+      <div style="width: 180px;height: 150px; background-color: white; border-radius: 10px; margin-left: 200px; margin-top: -150px;">
+        <div style="width: 180px;height: 150px; background-color: white; border-radius: 10px;"><br>
+          <span style="margin-left: 55px;">
+            <nz-avatar nzIcon="file-word"  [nzSize]="70" style="background-color:#87d068;"></nz-avatar>
+          </span>
+          <p style="font-weight: bold; font-size: 17px;margin-left: 7px;margin-top: 10px;">Biên bản bàn giao xe</p>
+        </div>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>
